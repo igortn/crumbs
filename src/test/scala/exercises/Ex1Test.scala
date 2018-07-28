@@ -24,15 +24,18 @@ class Ex1Test extends FunSuite {
     CabinPrice("CB", "S2", 270.00)
   )
 
-  val expectedBestCabinPrices: Seq[BestCabinPrice] = Seq(
+  val expectedBestCabinPrices: Set[BestCabinPrice] = Set(
     BestCabinPrice("CA", "M1", "Military", 200.00),
     BestCabinPrice("CA", "S1", "Senior", 225.00),
     BestCabinPrice("CB", "M1", "Military", 230.00),
     BestCabinPrice("CB", "S1", "Senior", 245.00)
   )
 
+  /*
+   * Tests the data set presented in the problem statement.
+   */
   test("Best cabin prices calculated correctly.") {
-    assert(bestCabinPrices(rates, cabinPrices) === expectedBestCabinPrices)
+    assert(bestCabinPrices(rates, cabinPrices).toSet === expectedBestCabinPrices)
   }
 
 }
