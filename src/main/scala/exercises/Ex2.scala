@@ -25,6 +25,12 @@ object Ex2 {
  * building the total set of maximal compatible subsets, and then this set can be reused to find
  * combinable promotions for any promotion code. Therefore, we choose to use the "top-down"
  * approach in this implementation.
+ *
+ * Note that this implementation is internally based on sets, not on sequences which feels
+ * more natural (the external API is preserved). Therefore, the order of the elements
+ * in the result is not guaranteed. The unit tests destructure the results from the API into
+ * sets before doing comparisons. It would be easy to make this implementation based internally
+ * on sequences if required.
  */
 
   /**
